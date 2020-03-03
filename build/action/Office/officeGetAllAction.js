@@ -10,18 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const Company_1 = require("../../entity/Company");
-function companyGetByIdAction(req, res) {
+const Office_1 = require("../../entity/Office");
+function officeGetAllAction(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const companyRepository = typeorm_1.getManager().getRepository(Company_1.Company);
-        const company = yield companyRepository.findOne(req.params.id, { relations: ['offices'] });
-        if (!company) {
-            res.status(404);
-            res.end();
-            return;
-        }
-        res.send(company);
+        const officeRepository = typeorm_1.getManager().getRepository(Office_1.Office);
+        const office = yield officeRepository.find();
+        res.send(office);
     });
 }
-exports.companyGetByIdAction = companyGetByIdAction;
-//# sourceMappingURL=companyGetByIdAction.js.map
+exports.officeGetAllAction = officeGetAllAction;
+//# sourceMappingURL=officeGetAllAction.js.map

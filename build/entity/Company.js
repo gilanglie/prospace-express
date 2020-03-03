@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
+const Office_1 = require("./Office");
 let Company = class Company {
 };
 __decorate([
@@ -32,6 +33,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Company.prototype, "phone", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => Office_1.Office, office => office.company),
+    __metadata("design:type", Array)
+], Company.prototype, "offices", void 0);
 Company = __decorate([
     typeorm_1.Entity()
 ], Company);
