@@ -21,7 +21,7 @@
     "reflect-metadata": "0.1.12",
     "tsc": "^1.20150623.0",
     "tsc-watch": "^4.2.3",
-    "typeorm": "^0.2.24"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/node": "^13.7.7",
